@@ -13,7 +13,7 @@ and change into it
 
 Set up the environment:
 
-	. ./chaste_env
+	. ./chaste.env
 
 Then start building stuff:
 
@@ -35,7 +35,7 @@ Chaste.mk, local.py and chaste.env
 To use the installation later or in another session, set up the environment
 again,
 
-	. ./chaste_env
+	. ./chaste.env
 
 or else copy the contents of that file into your .profile or .bashrc to
 have it always happen when you log in.
