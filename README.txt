@@ -3,7 +3,8 @@ Running Chaste on DICE
 
 Clone this git repository to
 
-	git clone https://github.com/edinburgh-rbm/chaste-dice.git /disk/data/chaste
+	git clone https://github.com/edinburgh-rbm/chaste-dice.git \
+		/disk/data/chaste
 
 (or alternatively move this directory there)
 
