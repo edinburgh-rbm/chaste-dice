@@ -1,4 +1,4 @@
-CHASTE?=/exports/eddie/scratch/wwaites/chaste
+CHASTE?=/disk/scratch/chaste
 
 chaste: .chaste_done
 .chaste_done: scons boost petsc xsd xerces vtk pycml
@@ -27,7 +27,7 @@ boost: .boost_done
 petsc: .petsc_done
 .petsc_done:
 	wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.4.4.tar.gz
-	zip -dc petsc-lite-3.4.4.tar.gz | tar -xvf -
+	gzip -dc petsc-lite-3.4.4.tar.gz | tar -xvf -
 	cd petsc-3.4.4; \
 		export PETSC_DIR=`pwd`; \
 		export PETSC_ARCH=linux-gnu; \
@@ -67,20 +67,20 @@ vtk: .vtk_done
 
 xsd: .xsd_done
 .xsd_done:
-	cd wget http://www.codesynthesis.com/download/xsd/3.3/linux-gnu/x86_64/xsd-3.3.0-x86_64-linux-gnu.tar.bz2
-	cd bzip2 -dc xsd-3.3.0-x86_64-linux-gnu.tar.bz2 | tar -xvf -
-	cd ln -s ${CHASTE}/xsd-3.3.0-x86_64-linux-gnu/bin/xsd ${CHASTE}/bin/xsd
+	wget http://www.codesynthesis.com/download/xsd/3.3/linux-gnu/x86_64/xsd-3.3.0-x86_64-linux-gnu.tar.bz2
+	bzip2 -dc xsd-3.3.0-x86_64-linux-gnu.tar.bz2 | tar -xvf -
+	ln -s ${CHASTE}/xsd-3.3.0-x86_64-linux-gnu/bin/xsd ${CHASTE}/bin/xsd
 	rm -f xsd-3.3.0-x86_64-linux-gnu.tar.bz2
 	touch .xsd_done
 
 xerces: .xerces_done
 .xerces_done:
-	wget http://www.eu.apache.org/dist/xerces/c/3/sources/xerces-c-3.1.1.tar.gz
-	tar -zxf xerces-c-3.1.1.tar.gz
-	cd xerces-c-3.1.1; \
+	wget http://mirror.ox.ac.uk/sites/rsync.apache.org//xerces/c/3/sources/xerces-c-3.1.4.tar.gz
+	tar -zxf xerces-c-3.1.4.tar.gz
+	cd xerces-c-3.1.4; \
 	export XERCESCROOT=`pwd`; \
 		./configure --prefix=${CHASTE}; \
 		make; \
 		make install
-	rm -rf xerces-c-3.1.1 xerces-c-3.1.1.tar.gz
+	rm -rf xerces-c-3.1.4 xerces-c-3.1.4.tar.gz
 	touch .xerces_done
