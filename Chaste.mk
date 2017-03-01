@@ -1,11 +1,10 @@
-CHASTE?=/disk/data/chaste
+CHASTE?=/exports/eddie/scratch/wwaites/chaste
 
 chaste: .chaste_done
 .chaste_done: scons boost petsc xsd xerces vtk pycml
-	wget -O chaste_release_3_2.tgz 'https://chaste.cs.ox.ac.uk/chaste/Inc/download.php?file=current/chaste_release_3_2.tgz'
-	gzip -dc chaste_release_3_2.tgz | tar -xvf -
-	cp local.py release_3.2/python/hostconfig
-	cd release_3.2; scons
+	git clone https://github.com/wwaites/chaste chaste_src
+	cp local.py chaste_src/python/hostconfig
+	cd chaste_src; scons
 
 scons: .scons_done
 .scons_done:

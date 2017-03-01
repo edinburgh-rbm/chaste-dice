@@ -44,7 +44,7 @@ import sys
 
 #EDIT HERE
 #For a simple installation all paths will be below this directory
-chaste_libs_path = '/disk/data/chaste/'
+chaste_libs_path = '/exports/eddie/scratch/wwaites/chaste'
 #EDIT HERE
 
 if not os.path.exists(chaste_libs_path) or not os.path.isdir(chaste_libs_path):
