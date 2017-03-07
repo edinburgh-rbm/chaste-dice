@@ -44,7 +44,7 @@ import sys
 
 #EDIT HERE
 #For a simple installation all paths will be below this directory
-chaste_libs_path = '/exports/eddie/scratch/wwaites/chaste'
+chaste_libs_path = '/disk/scratch/chaste'
 #EDIT HERE
 
 if not os.path.exists(chaste_libs_path) or not os.path.isdir(chaste_libs_path):
@@ -76,7 +76,7 @@ other_libpaths = [chaste_libs_path+'lib']
 
 # The order of libraries in these lists matters!
 # Note that boost serialization sometimes has a different name: eg boost_serialization-gcc41
-other_libraries = ['boost_serialization', 'boost_filesystem', 'boost_system', 'xerces-c', 'hdf5', 'parmetis', 'metis']
+other_libraries = ['boost_serialization', 'boost_filesystem', 'boost_system', 'boost_program_options', 'xerces-c', 'hdf5', 'parmetis', 'metis']
 # Note: parmetis before metis, hdf5 before z.
 
 # Assuming you installed PETSc with HYPRE support, you'll want this line:
